@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" href="bower_components/angular/angular-csp.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
 
 	<meta charset="UTF-8">
 	<title>Hackathon</title>
@@ -18,7 +19,9 @@
 		<div class="panel-heading">
 			<p>
 				<h3>
-					{{ person.name }} 
+					{{ person.name }}
+					<i class="fa fa-sm fa-list-ul fa-fw" style="float: right; cursor: pointer" ng-click=""></i>
+					<i class="fa fa-sm fa-thumbs-up fa-fw" style="float: right; cursor: pointer" ng-click=""></i>
 				</h3>
 				<h5>
 					{{ person.hometown }}
