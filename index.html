@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='FoodJournal'>
+<head>
+	<link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+	<meta charset="UTF-8">
+	<title>Hackathon</title>
+</head>
+<body ng-controller='MainController'>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Welcome Homies!</h1>
+		</div>
+
+	<div class="panel panel-primary" ng-repeat="person in team">
+		<div class="panel-heading">
+			<p>
+				<h3>
+					{{ person.name }} 
+				</h3>
+				<h5>
+					{{ person.hometown }}
+				</h5>
+			</p>
+		</div>
+
+		<div class="panel-body">
+			<p>
+
+			</p>
+			<img src="{{ person.avatar }}" alt="NA">
+		</div>
+	</div>
+		
+	</div>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
