@@ -3,83 +3,77 @@
 <head>
 	<!-- AngularJS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-
 	<!-- Firebase -->
 	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-
 	<!-- AngularFire -->
 	<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
-	
-	<script src="app.js"></script>
-
 	<link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+  <!-- navbar dependencies -->
+  <script type="text/javascript" src=" http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js"></script>
+  <script src="bower_components/bootstrap/js/collapse.js"></script>
+  <script src="bower_components/bootstrap/js/dropdown.js"></script>
+  <script src="bower_components/bootstrap/js/transition.js"></script>
+  <!-- end navbar dependencies -->
 
-<!-- navbar dependencies -->
-	<script type="text/javascript" src=" http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js"></script>
-	<script src="bower_components/bootstrap/js/collapse.js"></script>
-	<script src="bower_components/bootstrap/js/dropdown.js"></script>
-	<script src="bower_components/bootstrap/js/transition.js"></script>
-<!-- end navbar dependencies -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="main.css">
 
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
-	<link rel="stylesheet" href="main.css">
-
-	<meta charset="UTF-8">
-	<title>greenBean</title>
+  <meta charset="UTF-8">
+  <title>greenBean</title>
 </head>
 <body ng-controller='MainController'>
 
-<!-- begin navbar -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">greenBean</a>
-    </div>
+  <!-- begin navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">greenBean</a>
+      </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">New Meal <span class="sr-only">(current)</span></a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown" ng-repeat="person in team">
-            	<a href="#" ng-click="activeUserFn(person.name)"><img src="{{person.avatar}}">&nbsp {{person.name}}</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<!-- end navbar -->
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="forms.html">New Meal <span class="sr-only">(current)</span></a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown" ng-repeat="person in team">
+               <a href="profile.html" ng-click="activeUserFn(person.name)"><img src="{{person.avatar}}">&nbsp {{person.name}}</a></li>
+             </ul>
+           </li>
+         </ul>
+       </div><!-- /.navbar-collapse -->
+     </div><!-- /.container-fluid -->
+   </nav>
+   <!-- end navbar -->
 
-<!-- hd image -->
-<div class="jumbotron">
-   <div class="container">
+   <!-- hd image -->
+   <div class="jumbotron">
+     <div class="container">
       <h1>Welcome to greenBean</h1>
       <p>The food journal and healthy eating web app.</p>
-   </div>
-</div>
-<!-- end hd image -->
-<div class="main-content">
-	<div class="container" ng-repeat="article in articles">
+    </div>
+  </div>
+  <!-- end hd image -->
+  <div class="main-content">
+   <div class="container" ng-repeat="article in articles">
     <h2>{{article.title}}</h2>
     <h3>{{article.sub}}</h3>
-      <div ng-repeat ="section in articles.sections"><h4>{{sections.header}}</h4>
+    <div ng-repeat ="section in articles.sections"><h4>{{sections.header}}</h4>
+    </div>
   </div>
-</div>
 
 </body>
 
-  <script src="bower_components/angular/angular.js"></script>
-	<script src="filters.js"></script>
-  <script src="app.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="filters.js"></script>
+<script src="app.js"></script>
 </html>
