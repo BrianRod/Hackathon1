@@ -75,7 +75,7 @@
 						<i class="fa fa-sm fa-list-ul fa-fw" style="float: right; cursor: pointer" ng-click="show()"></i>
 					</div>
 					<div ng-show="showData" class="panel-body" ng-repeat="input in inputs">
-						<p><span>Date:  </span>{{ input.date | date}}</p>
+						<p><span>Date:  {{ input.date | date }}</span></p>
 						<p><span>Meal:  </span>{{ input.meal }}</p>
 						<p><span>Log:  </span>{{ input.about }}</p>
 						<p><span>Feeling:  </span>{{ input.feel }}</p>
@@ -84,6 +84,14 @@
 				</div>
 			</div>
 		</div>
+		<!-- footer -->
+​
+    <footer class="footer">
+      <div class="container">
+        <p class="footText">Created by the greenBeans &copy; 2015</p>
+      </div>
+    </footer>
+<!-- /footer -->
 	</body>
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="filters.js"></script>

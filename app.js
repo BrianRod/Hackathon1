@@ -13,17 +13,21 @@ app.controller('MainController', ['$scope', '$firebaseArray', function($scope, $
 	$scope.activeUser = "Ryan Hall";
 	$scope.showData = false;
 
+$scope.$watch('inputs', function() { 
+    console.log("update data");
+});
+
 	$scope.forms = function()
 	{
 		var newForms = {};
 		console.log("function works");
-		newForms.user 	= $scope.team.name;
+		newForms.user 	= $scope.team.name || "Ryan Hall";
 		newForms.meal 	= $scope.meal.name;
 		newForms.about 	= $scope.about;
 		newForms.feel 	= $scope.feel.name;
 		newForms.date 	= Date.now();
 
-		var JSONnewForms = JSON.stringify(newForms);
+		var JSONnewForms = newForms //JSON.stringify(newForms);
 
 		console.log(JSONnewForms);
 		$scope.inputs.$add(JSONnewForms);
@@ -36,13 +40,13 @@ app.controller('MainController', ['$scope', '$firebaseArray', function($scope, $
 	}
 
 	$scope.show = function() {
+		console.log($scope.inputs);
 		if (!$scope.showData) {
 			$scope.showData = true;
 		} else {
 			$scope.showData = false;
-		}
-
-	}
+}
+	};
 	$scope.team = [
 	{
 		name: 'Ryan Hall',

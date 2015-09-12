@@ -1,11 +1,26 @@
 .navbar {
 	margin-bottom: 0;
 }
-
+​
 .profile {
 	display: inline-block;
 }
-
-div.panel-heading {
-	height: 35px;
+​
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+​
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #5f9637;
+  padding-top: 10px;
+}
+​
+.footText {
+	color: #ffffff;
 }
