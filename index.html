@@ -15,30 +15,47 @@
 			<h1>Welcome Homies!</h1>
 		</div>
 
-	<div class="panel panel-primary" ng-repeat="person in team">
-		<div class="panel-heading">
-			<p>
+<!-- !profile info -->
+	<div class="row" ng-repeat="person in team">
+  		<div class="col-md-3">
+	
+			<img src="{{ person.avatar }}" alt="NA">
 				<h3>
 					{{ person.name }}
-					<i class="fa fa-sm fa-list-ul fa-fw" style="float: right; cursor: pointer" ng-click=""></i>
-					<i class="fa fa-sm fa-thumbs-up fa-fw" style="float: right; cursor: pointer" ng-click=""></i>
 				</h3>
 				<h5>
 					{{ person.hometown }}
 				</h5>
 			</p>
 		</div>
+	
 
-		<div class="panel-body">
-			<p>
+	
+  		<div class="col-md-9">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<input type="text" placeholder="Filter" ng-model="search.text">
 
-			</p>
-			<img src="{{ person.avatar }}" alt="NA">
-		</div>
+					<i class="fa fa-sm fa-list-ul fa-fw" style="float: right; cursor: pointer" ng-click=""></i>
+				</div>
+				<div class="panel-body" ng-repeat="input in inputs">
+			
+					<p src="{{ input.img }}"></p>
+					<p><span>Date:  </span>{{ input.date | date}}</p>
+					<p><span>Meal:  </span>{{ input.meal }}</p>
+					<p><span>Log:  </span>{{ input.about }}</p>
+					<p><span>Feeling:  </span>{{ input.feel }}</p>
+					<i class="fa fa-md fa-pencil-square-o fa-fw" style="float: right; cursor: pointer" ng-click=""></i>
+
+			
+				</div>
+			</div>
+		</div>	
 	</div>
-		
-	</div>
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="app.js"></script>
+	
+
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="app.js"></script>
+		<script src="filters.js"></script>
 </body>
 </html>

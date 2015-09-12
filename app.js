@@ -1,6 +1,7 @@
 var app = angular.module('FoodJournal', []);
 
-app.controller('MainController', ['$scope', function($scope) {
+app.controller('MainController', 'Filters',['$scope', function($scope) {
+
 $scope.team = [
 {
 	name: 'Ryan Hall',
@@ -19,8 +20,31 @@ $scope.team = [
 
 }];
 
-
-
+$scope.inputs = [
+{
+	user: "Ryan",
+	meal: "Breakfast",
+	about: "Egg sandwhich, coffee",
+	feel: "Good",
+	date: "9/12/2015",
+	img: "food.img"
+},
+{
+	user: "Ryan",
+	meal: "Lunch",
+	about: "Pizza, beer",
+	feel: "Bad",
+	date: "9/12/2015",
+	img: "food.img"
+},
+{
+	user: "Ryan",
+	meal: "Dinner",
+	about: "Burger, soda",
+	feel: "Unsure",
+	date: "9/12/2015",
+	img: "food.img"
+}];
 
 
 }]);
