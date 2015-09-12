@@ -5,3 +5,7 @@
 .profile {
 	display: inline-block;
 }
+
+div.panel-heading {
+	height: 35px;
+}

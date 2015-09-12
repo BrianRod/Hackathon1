@@ -41,7 +41,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="forms.html">New Meal <span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="forms.html">New Meal <span class="sr-only">(current)</span></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles<span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -63,14 +63,20 @@
     </div>
   </div>
   <!-- end hd image -->
-  <div class="main-content">
-   <div class="container" ng-repeat="article in articles">
+
+<!-- articles -->
+<div class="main-content">
+  <div class="container" ng-repeat="article in articles">
     <h2>{{article.title}}</h2>
     <h3>{{article.sub}}</h3>
-    <div ng-repeat ="section in articles.sections"><h4>{{sections.header}}</h4>
-    </div>
+    <hr />
+    <h4>{{article.section1.header1}}</h4>
+    <p>{{article.section1.content1}}</p>
+    <h4>{{article.section2.header2}}</h4>
+    <p>{{article.section2.content2}}</p>
   </div>
-
+</div>
+<!-- /articles -->
 </body>
 
 <script src="bower_components/angular/angular.js"></script>
