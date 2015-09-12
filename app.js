@@ -13,7 +13,7 @@ $scope.team = [
 	avatar: 'images/daniel.jpg'
 },
 {
-	name: 'Brian',
+	name: 'Brian Rod',
 	hometown: 'Salt Lake City',
 	avatar: 'images/brian.jpg'
 
