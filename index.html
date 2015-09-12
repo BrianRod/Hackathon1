@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='FoodJournal'>
 <head>
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+	<!-- Firebase -->
+	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+	<!-- AngularFire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+	
+	<script src="app.js"></script>
+
 	<link rel="stylesheet" href="bower_components/angular/angular-csp.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
@@ -36,9 +47,31 @@
 			<img src="{{ person.avatar }}" alt="NA">
 		</div>
 	</div>
+	<!-- New forms -->
+	<form ng-submit="forms()">
+
+		<div>
+			<div>
+				Select a User:
+				<select ng-model="user" ng-options="users.name for users in team"></select>
+			</div>
+			<div>
+				
+				<select ng-model="meal" ng-options="meals.name for meals in mealTypes"></select>
+			</div>
+
+			<input type="text" ng-model="about" placeholder="How was your meal?" required>
+			
+			<div>
+				How did you feel?:	
+				<select ng-model= "feel" ng-options="feeling.name for feeling in feels"></select>
+			</div>
 		
+			<div>
+			<input type="submit" id="submit" value="Submit Content">  
+			</div>
+		</div>
+	</form>
 	</div>
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="app.js"></script>
 </body>
 </html>
