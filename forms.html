@@ -1,0 +1,27 @@
+
+
+		<!-- New forms -->
+	<form ng-submit="forms()">
+
+		<div>
+			<div>
+				Select a User:
+				<select ng-model="user" ng-options="users.name for users in team"></select>
+			</div>
+			<div>
+				
+				<select ng-model="meal" ng-options="meals.name for meals in mealTypes"></select>
+			</div>
+
+			<input type="text" ng-model="about" placeholder="How was your meal?" required>
+			
+			<div>
+				How did you feel?:	
+				<select ng-model= "feel" ng-options="feeling.name for feeling in feels"></select>
+			</div>
+		
+			<div>
+			<input type="submit" id="submit" value="Submit Content">  
+			</div>
+		</div>
+	</form>
