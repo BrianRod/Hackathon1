@@ -24,3 +24,7 @@ body {
 .footText {
 	color: #ffffff;
 }
+
+div.panel-heading {
+	height: 35px;
+}
