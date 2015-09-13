@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTY11PE html>
 <html lang="en" ng-app='FoodJournal'>
 <head>
 	<!-- AngularJS -->
@@ -45,64 +45,54 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-						<li class="dropdown" ng-repeat="person in team">
-								<a href="profile.html" ng-click="activeUserFn(person.name)"><img src="{{person.avatar}}">&nbsp {{person.name}}</a>
+							<li class="dropdown" ng-repeat="person in team">
+								<a href="profile.html" ng-click="activeUserFn(person.name)"><img src="{{person.avatar}}">&nbsp {{person.name}}</a></li>
+							</ul>
 						</li>
-						</ul>
-					</li>
-				</ul>
-			</div><!-- /.navbar-collapse -->
+					</ul>
+				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
 		<!-- end navbar -->
+		<br>
+		<div class="container">
 
-		<!-- New forms -->
-	<table class="center">
-		<tr class="tabletop">
-			<th class>Date</th>
-			<th>Meal</th>
-			<th>Food</th>
-			<th>Reaction</th>
-			<th></th>
-		</tr>
-		<form>
-		<tr>
-			<td class="Meal-form"><input type="text" ng-model="about" placeholder="mm/dd/yyyy" required></td>
-			<td>
-				<select ng-model="meal" ng-options="meals.name for meals in mealTypes">
-					<option value="" disabled selected>Select</option>
-				</select>
-			</td>
-			<td><input type="text" ng-model="about" placeholder="What did you eat" required></td>
-			<td>
-				<select ng-model= "feel" ng-options="feeling.name for feeling in feels">
-					<option value="" disabled selected>Select</option>
-				</select>
-			</td>
-			<td><input type="submit" id="submit" value="Submit Content"></td>
-		</tr>
-
-		</form>
-		<tr>
-			<td>Sep 12, 2015</td>
-			<td>Breakfast</td>
-			<td>Pizza</td>
-			<td>Bad</td>
-			<td></td>
-		</tr>
-	</table>
-		<!-- /New forms -->
-
-<!-- footer -->
+			<!-- !profile info -->
+			<div class="row">
+				<div class="col-sm-3">
+				<img src="{{ team[0].avatar}}" alt="NA">
+					<h3>
+						{{ team[0].name }}
+					</h3>
+					<h5>
+						{{ team[0].hometown }}
+					</h5>
+				</p>
+			</div>
+			<div class="col-sm-9">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<i class="fa fa-sm fa-list-ul fa-fw" style="float: right; cursor: pointer" ng-click="show()"></i>
+					</div>
+					<div ng-show="showData" class="panel-body" ng-repeat="input in inputs">
+						<p><span>Date:  {{ input.date | date }}</span></p>
+						<p><span>Meal:  </span>{{ input.meal }}</p>
+						<p><span>Log:  </span>{{ input.about }}</p>
+						<p><span>Feeling:  </span>{{ input.feel }}</p>
+						<i class="fa fa-md fa-pencil-square-o fa-fw" style="float: right; cursor: pointer" ng-click=""></i>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
 ​
-    <footer>
+    <footer class="footer">
       <div class="container">
-        <p id="footText">Created by the greenBeans &copy; 2015</p>
+        <p class="footText">Created by the greenBeans &copy; 2015</p>
       </div>
     </footer>
 <!-- /footer -->
 	</body>
-
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="filters.js"></script>
 	<script src="app.js"></script>
