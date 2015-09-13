@@ -45,45 +45,59 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li class="dropdown" ng-repeat="person in team">
-								<a href="profile.html" ng-click="activeUserFn(person.name)"><img src="{{person.avatar}}">&nbsp {{person.name}}</a></li>
-							</ul>
+						<li class="dropdown" ng-repeat="person in team">
+								<a href="profile.html" ng-click="activeUserFn(person.name)"><img src="{{person.avatar}}">&nbsp {{person.name}}</a>
 						</li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
 		<!-- end navbar -->
 
 		<!-- New forms -->
-		<form ng-submit="forms()">
+	<table class="center">
+		<tr class="tabletop">
+			<th class>Date</th>
+			<th>Meal</th>
+			<th>Food</th>
+			<th>Reaction</th>
+			<th></th>
+		</tr>
+		<form>
+		<tr>
+			<td class="Meal-form"><input type="text" ng-model="about" placeholder="mm/dd/yyyy" required></td>
+			<td>
+				<select ng-model="meal" ng-options="meals.name for meals in mealTypes">
+					<option value="" disabled selected>Select</option>
+				</select>
+			</td>
+			<td><input type="text" ng-model="about" placeholder="What did you eat" required></td>
+			<td>
+				<select ng-model= "feel" ng-options="feeling.name for feeling in feels">
+					<option value="" disabled selected>Select</option>
+				</select>
+			</td>
+			<td><input type="submit" id="submit" value="Submit Content"></td>
+		</tr>
 
-			<div>
-				<div>
-					Select a User:
-					<select ng-model="user" ng-options="users.name for users in team"></select>
-				</div>
-				<div>
-					<select ng-model="meal" ng-options="meals.name for meals in mealTypes"></select>
-				</div>
-
-				<input type="text" ng-model="about" placeholder="How was your meal?" required>
-
-				<div>
-					How did you feel?:	
-					<select ng-model= "feel" ng-options="feeling.name for feeling in feels"></select>
-				</div>
-
-				<div>
-					<input type="submit" id="submit" value="Submit Content">  
-				</div>
-			</div>
 		</form>
+		<tr>
+			<td>Sep 12, 2015</td>
+			<td>Breakfast</td>
+			<td>Pizza</td>
+			<td>Bad</td>
+			<td></td>
+		</tr>
+	</table>
+		<!-- /New forms -->
+
 <!-- footer -->
 ​
-    <footer class="footer">
+    <footer>
       <div class="container">
-        <p class="footText">Created by the greenBeans &copy; 2015</p>
+        <p id="footText">Created by the greenBeans &copy; 2015</p>
       </div>
     </footer>
 <!-- /footer -->
