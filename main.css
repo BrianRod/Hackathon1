@@ -59,3 +59,12 @@ tr {
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
+
+.headerfont {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+	color: #ffffff;
+    }
+ h1.headerfont {
+ 	color: #ffffff;
+ }
