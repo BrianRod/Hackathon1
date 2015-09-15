@@ -1,8 +1,10 @@
-<!DOCTY11PE html>
+<!DOCTYYPE html>
 <html lang="en" ng-app='FoodJournal'>
 <head>
 	<!-- AngularJS -->
+    <meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
 	<!-- Firebase -->
 	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 	<!-- AngularFire -->
@@ -17,9 +19,10 @@
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  
 
-  <meta charset="UTF-8">
+
   <title>greenBean</title>
 </head>
 <body ng-controller='MainController'>
@@ -58,33 +61,13 @@
    <!-- hd image -->
    <div class="jumbotron">
      <div class="container">
-      <h1>Welcome to greenBean</h1>
-      <p>The food journal and healthy eating web app.</p>
+      <h1 class="headerfont">Welcome to greenBean</h1>
+      <p class="headerfont">The food journal and healthy eating web app.</p>
     </div>
   </div>
   <!-- end hd image -->
 
-<!-- articles -->
-<div class="main-content">
-  <div class="container" ng-repeat="article in articles">
-    <h2>{{article.title}}</h2>
-    <h3>{{article.sub}}</h3>
-    <hr />
-    <h4>{{article.section1.header1}}</h4>
-    <p>{{article.section1.content1}}</p>
-    <h4>{{article.section2.header2}}</h4>
-    <p>{{article.section2.content2}}</p>
-  </div>
-</div>
-<!-- /articles -->
-<!-- footer -->
-​
-    <footer class="footer">
-      <div class="container">
-        <p class="footText">Created by the greenBeans &copy; 2015</p>
-      </div>
-    </footer>
-<!-- /footer -->
+
 </body>
 
 <script src="bower_components/angular/angular.js"></script>

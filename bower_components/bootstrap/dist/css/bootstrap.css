@@ -5008,8 +5008,7 @@ a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #eee;
-  background: url("../../../../images/jumbotronbg.jpg");
+  background-color: #5f9637;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -5029,6 +5028,7 @@ a.badge:focus {
 }
 .jumbotron .container {
   max-width: 100%;
+  min-height: 300px;
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
