@@ -13,9 +13,6 @@ app.controller('MainController', ['$scope', '$firebaseArray', function($scope, $
 	$scope.activeUser = "Ryan Hall";
 	$scope.showData = false;
 
-	/*app.run(function(editableOptions){
-		editableOptions.theme = 'bs3';
-	});*/
 
 $scope.$watch('inputs', function() { 
     console.log("update data");
