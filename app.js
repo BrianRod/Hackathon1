@@ -1,4 +1,5 @@
-var app = angular.module('FoodJournal', ['firebase']);
+var app = angular.module('FoodJournal', ["firebase"]);
+
 
 app.controller('MainController', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
 
@@ -10,13 +11,13 @@ app.controller('MainController', ['$scope', '$firebaseArray', function($scope, $
 
 	$scope.feels = [{name: "Great"}, {name: "Good"}, {name: "Bad"}, {name: "Horrible"}, {name: "Not sure"}];
 
-	$scope.activeUser = "Ryan Hall";
-	$scope.showData = false;
+	/*$scope.activeUser = "Ryan Hall";
+	$scope.showData = false;*/
 
 
-$scope.$watch('inputs', function() { 
+/*$scope.$watch('inputs', function() { 
     console.log("update data");
-});
+});*/
 
 	$scope.forms = function()
 	{
@@ -47,6 +48,13 @@ $scope.$watch('inputs', function() {
 		} else {
 			$scope.showData = false;
 }
+
+	/*$scope.login = function(){
+		$scope.authData = null;
+		$scope.error = null;
+
+	}*/
+
 	};
 	$scope.team = [
 	{
@@ -87,5 +95,33 @@ $scope.$watch('inputs', function() {
 		content2: "Consuming fruits and vegetables of all kinds has long been associated with a reduced risk of many adverse health conditions. Many studies have suggested that increasing consumption of plant foods like green beans decreases the risk of obesity, diabetes, heart disease and overall mortality while promoting a healthy complexion, increased energy and overall lower weight."
 	}
 }];
+
+}]);
+
+app.controller("AuthController",['$scope', '$firebaseAuth', function($scope, $firebaseAuth){
+
+	var ref = new Firebase("https://greenbean.firebaseio.com/");
+	var auth = $firebaseAuth(ref);
+
+	$scope.loginwithFacebook = function(){
+		auth.$authWithOAuthPopup("facebook").then(function(authData){
+			console.log(authData);
+		}).catch(function(error){
+			console.error(error);
+		});
+	}
+	
+	$scope.loginwithGit = function(){
+		auth.$authWithOAuthPopup("github").then(function(authData){
+			console.log(authData);
+		}).catch(function(error){
+			console.error(error);
+		});
+	}
+	
+	$scope.logout = function(){
+		auth.$unauth();
+	}
+
 
 }]);
