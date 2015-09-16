@@ -5009,6 +5009,9 @@ a.badge:focus {
   margin-bottom: 30px;
   color: inherit;
   background-color: #5f9637;
+  background-image: url(../../../../images/jumbotronbg.JPG);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .jumbotron h1,
 .jumbotron .h1 {
